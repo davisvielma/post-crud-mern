@@ -5,18 +5,18 @@ import { IPost } from "./../models/Post.models";
 
 const verifyCreateFields = (title: string, description: string) => {
 	if (!title || !description) {
-		return createServiceResponse(false, "All fields are required");
+		return createServiceResponse(false, "Todos Los campos son requeridos");
 	}
 
-	return createServiceResponse(true, "Fields fine");
+	return createServiceResponse(true, "Campos llenos correctamente");
 };
 
 const verifyUpdateFields = (title: string, description: string) => {
 	if (!title && !description) {
-		return createServiceResponse(false, "Error all fields are empty");
+		return createServiceResponse(false, "Los campos estan vacios");
 	}
 
-	return createServiceResponse(true, "Field fine");
+	return createServiceResponse(true, "Campos llenos correctamente");
 };
 
 const create = async (title: string, description: string) => {
@@ -29,10 +29,10 @@ const create = async (title: string, description: string) => {
 		const postSaved = await post.save();
 
 		if (!postSaved) {
-			return createServiceResponse(false, "Post not created");
+			return createServiceResponse(false, "El post no pudo ser creado");
 		}
 
-		return createServiceResponse(true, "Post Created", [postSaved]);
+		return createServiceResponse(true, "Post creado correctante", [postSaved]);
 	} catch (error) {
 		throw error;
 	}
@@ -41,7 +41,7 @@ const create = async (title: string, description: string) => {
 const findAll = async () => {
 	try {
 		const posts = await PostModel.find();
-		return createServiceResponse(true, "Posts all found", posts);
+		return createServiceResponse(true, "Todos los posts encontrados", posts);
 	} catch (error) {
 		throw error;
 	}
@@ -52,10 +52,10 @@ const findOneByID = async (id: string) => {
 		const post = await PostModel.findById(id);
 
 		if (!post) {
-			return createServiceResponse(false, "Post not found");
+			return createServiceResponse(false, "Post no encontrado");
 		}
 
-		return createServiceResponse(true, "Post Found", [post]);
+		return createServiceResponse(true, "Post encontrado", [post]);
 	} catch (error) {
 		throw error;
 	}
@@ -69,10 +69,10 @@ const updateOneByID = async (id: string, body: Object) => {
 		});
 
 		if (!postUpdated) {
-			return createServiceResponse(false, "Post not updated");
+			return createServiceResponse(false, "Post no ha sido actualizado");
 		}
 
-		return createServiceResponse(true, "Post updated", [postUpdated]);
+		return createServiceResponse(true, "Post actualizado", [postUpdated]);
 	} catch (error) {
 		throw error;
 	}
@@ -83,10 +83,10 @@ const deleteOneByID = async (id: string) => {
 		const postDeleted = await PostModel.findByIdAndDelete(id);
 
 		if (!postDeleted) {
-			return createServiceResponse(false, "Post could not be deleted");
+			return createServiceResponse(false, "Post no ha sido eliminado");
 		}
 
-		return createServiceResponse(true, "Post remove", [postDeleted]);
+		return createServiceResponse(true, "Post eliminado", [postDeleted]);
 	} catch (error) {
 		throw error;
 	}

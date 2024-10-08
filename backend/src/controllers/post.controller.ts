@@ -41,7 +41,7 @@ const createPost = async (req: Request, res: Response) => {
 		const response = createControllerResponse(
 			false,
 			500,
-			"Internal Server Error"
+			"Error interno del servidor"
 		);
 		res.status(500).json(response);
 		return;
@@ -63,7 +63,7 @@ const getAllPosts = async (req: Request, res: Response) => {
 		const response = createControllerResponse(
 			false,
 			500,
-			"Internal Server Error"
+			"Error interno del servidor"
 		);
 		res.status(500).json(response);
 		return;
@@ -74,7 +74,7 @@ const getOnePost = async (req: Request, res: Response) => {
 	const { id } = req.params;
 
 	if (!verifyID(id)) {
-		const response = createControllerResponse(false, 400, "Error in ID");
+		const response = createControllerResponse(false, 400, "Error ID invalido");
 		res.status(400).json(response);
 		return;
 	}
@@ -99,7 +99,7 @@ const getOnePost = async (req: Request, res: Response) => {
 		const response = createControllerResponse(
 			false,
 			500,
-			"Internal Server Error"
+			"Error interno del servidor"
 		);
 		res.status(500).json(response);
 		return;
@@ -120,7 +120,7 @@ const updatePost = async (req: Request, res: Response) => {
 	const { id } = req.params;
 
 	if (!verifyID(id)) {
-		const response = createControllerResponse(false, 400, "Error in ID");
+		const response = createControllerResponse(false, 400, "Error ID invalido");
 		res.status(400).json(response);
 		return;
 	}
@@ -156,7 +156,7 @@ const updatePost = async (req: Request, res: Response) => {
 		const response = createControllerResponse(
 			false,
 			500,
-			"Internal Server Error"
+			"Error interno del servidor"
 		);
 		res.status(500).json(response);
 		return;
@@ -167,7 +167,7 @@ const deletePost = async (req: Request, res: Response) => {
 	const { id } = req.params;
 
 	if (!verifyID(id)) {
-		const response = createControllerResponse(false, 400, "Error in ID");
+		const response = createControllerResponse(false, 400, "Error ID invalido");
 		res.status(400).json(response);
 		return;
 	}
@@ -203,7 +203,7 @@ const deletePost = async (req: Request, res: Response) => {
 		const response = createControllerResponse(
 			false,
 			500,
-			"Internal Server Error"
+			"Error interno del servidor"
 		);
 		res.status(500).json(response);
 		return;
