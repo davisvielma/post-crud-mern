@@ -1,9 +1,12 @@
 import express, { Express } from "express";
 import morgan from "morgan";
 import cors from "cors";
+import swaggerJsDoc from "swagger-jsdoc";
+import swaggerUI from "swagger-ui-express";
 
 import { PORT } from "./config";
 import routes from "./routes";
+import swaggerSpec from "./swagger";
 
 export class App {
 	private app: express.Application;
@@ -24,15 +27,14 @@ export class App {
 		this.app.use(cors());
 		this.app.use(express.urlencoded({ extended: false }));
 		this.app.use(express.json());
+		this.app.use(
+			"/api/docs",
+			swaggerUI.serve,
+			swaggerUI.setup(swaggerJsDoc(swaggerSpec))
+		);
 	}
 
 	routes() {
-		this.app.get("/", (req, res) => {
-			res.status(200).json({
-				name: "API REST tareas",
-			});
-		});
-
 		this.app.use("/api", routes);
 	}
 
