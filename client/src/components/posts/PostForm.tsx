@@ -86,7 +86,7 @@ const PostForm = () => {
 					placeholder="Escribe la descripcion"
 					name="description"
 					className="p-3 w-full mb-2 rounded-md"
-					rows={5}
+					rows={3}
 					onChange={handleChange}
 					value={post.description}
 				></textarea>
