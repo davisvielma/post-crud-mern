@@ -18,7 +18,7 @@ _Nota_: en cada carpeta hay un archivo `.env.example` donde hay un ejemplo de la
 
 ## Backend
 
-Esta desarrollada principalmente con node.js, express y mongoDB. Las instrucciones para ejecutar el servidor de manera local son las siguientes
+Esta desarrollada principalmente con node.js, express y mongoDB. Las instrucciones para ejecutar el servidor de manera local son las siguientes:
 
 ```
 cd backend
@@ -44,7 +44,7 @@ El esquema de la respuesta que retorna los endpoints es la siguiente:
 - message: mensaje que describe lo ocurrido con la respuesta.
 - Post: arreglo de posts.
 
-_Nota:_ la base de datos esta almacena en Mongo Atlas, tanto en desarrolo como en produccion y hay un archivo .env.example donde hay un ejemplo de las variables de entorno utilizadas.
+_Nota:_ la base de datos esta almacena en Mongo Atlas.
 
 ## Frontend
 
