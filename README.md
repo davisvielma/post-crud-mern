@@ -56,6 +56,6 @@ npm instal
 npm run dev
 ```
 
-De igual forma puede ver la aplicacion sin descargar el repositorio, esta esta alojada en la siguiente ruta: [https://backend-mern-kaxt.onrender.com](https://backend-mern-kaxt.onrender.com)
+De igual forma puede ver la aplicacion sin descargar el repositorio, esta esta alojada en la siguiente ruta: [https://post-crud-mern.onrender.com](https://post-crud-mern.onrender.com)
 
 La pagina consiste en la ruta inicial "/" la lista de los posts almacenados donde cada uno tiene un boton para poder modificarlo o eliminarlo, tambien hay un input donde se puede buscar algun post o los posts que generen coincidencias con la clave de busqueda. Hay un formulario para crear nuevos los post.
